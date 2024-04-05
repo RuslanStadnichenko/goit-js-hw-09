@@ -1,2 +1,2 @@
-import"./assets/styles-ec4441b5.js";console.log("Form");
+import"./assets/styles-af4ac396.js";const r=document.querySelector(".feedback-form"),a={},o="feedback-form-state",n=()=>{try{const e=JSON.parse(localStorage.getItem(o));if(e===null)return;for(const t in e)r.elements[t].value=e[t]}catch(e){console.error("Error while filling form fields:",e)}},s=e=>{const t=e.target,c=t.name,l=t.value;a[c]=l,localStorage.setItem(o,JSON.stringify(a))},i=e=>{e.preventDefault(),localStorage.removeItem(o),r.reset()};n();r.addEventListener("input",s);r.addEventListener("submit",i);
 //# sourceMappingURL=commonHelpers2.js.map
