@@ -77,7 +77,7 @@ const createGalleryImg = image => {
  		<img 
  			class="gallery-image" 
  			src="${image.preview}" 
- 			alt="${image.description}" 
+ 			alt="${image.description}"
  			/>
 	</a>
 </li>
@@ -93,5 +93,7 @@ itemGallery.innerHTML = imagesGalleryCard;
 
 const lightbox = new SimpleLightbox('.list-gallery a', { 
 captionsData: 'alt',
-captionDelay: 250,
+	captionDelay: 250,
+	overlayOpacity: 0.9,
+
 });
