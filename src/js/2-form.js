@@ -22,9 +22,12 @@ const fillFeedbackFormFields = () => {
 const saveFormState = (event) => {
   const feedbackFieldEl = event.target;
   const feedbackFieldName = feedbackFieldEl.name;
-  const feedbackFieldValue = feedbackFieldEl.value;
+  const feedbackFieldValue = feedbackFieldEl.value.trim();
+ 
+
 
   userData[feedbackFieldName] = feedbackFieldValue;
+  
 
   localStorage.setItem(storageKey, JSON.stringify(userData));
 };
