@@ -1,5 +1,5 @@
 const feedbackFormEl = document.querySelector('.feedback-form');
-const userData = {};
+let userData = {};
 const storageKey = 'feedback-form-state';
 
 const fillFeedbackFormFields = () => {
@@ -10,9 +10,9 @@ const fillFeedbackFormFields = () => {
       return;
     }
 
-    for (const key in userDataFromLS) {
-      feedbackFormEl.elements[key].value = userDataFromLS[key];
-    }
+    userData = userDataFromLS
+    feedbackFormEl.elements.email.value = userDataFromLS.email || "";
+    feedbackFormEl.elements.message.value = userDataFromLS.message || "";
    } catch (err) {
        console.error('Error while filling form fields:', err);
   }
@@ -35,12 +35,14 @@ const onFeedbackFormSubmit = event => {
   if (email.value.trim() === "" || message.value.trim() === "") {
     return alert("Не всі поля заповнені")
   }
-
-  console.log('Email:', email.value.trim());
-  console.log('Message:', message.value.trim());
+  userData.email = email.value.trim();
+  userData.message = message.value.trim();
+  console.log(userData);
+  
 
   localStorage.removeItem(storageKey);
   feedbackFormEl.reset();
+  userData = {};
 };
 
 
