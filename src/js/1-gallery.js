@@ -94,6 +94,6 @@ itemGallery.innerHTML = imagesGalleryCard;
 const lightbox = new SimpleLightbox('.list-gallery a', { 
 captionsData: 'alt',
 	captionDelay: 250,
-	overlayOpacity: 0.9,
+	overlayOpacity: 1.9,
 
 });

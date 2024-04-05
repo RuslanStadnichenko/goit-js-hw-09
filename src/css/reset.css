@@ -65,7 +65,9 @@ img {
   height: 100%;
 }
 
-
+.sl-overlay {
+  background-color: rgba(46, 47, 66, 1.0) !important;
+}
 
 
 /** Стилі форми */
